@@ -16,7 +16,7 @@ export default function Eatery() {
 	};
 
 	return (
-		<div className="eatery">
+		<div>
 			<h2>Столовая</h2>
 			<MenuButtons onDishSelect={onDishSelect} />
 			<Dish dish={dish} isCooking={isCooking} />
