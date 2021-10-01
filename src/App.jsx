@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Eatery from './Eatery'
+import Restaurant from './Restaurant'
 import Crabs from './Crabs'
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
       <button onClick={() => setInEatery(!inEatery)}>
         Пойти в другое место
       </button>
-      {inEatery ? <Eatery /> : <Crabs />}
+      {inEatery ? <Restaurant /> : <Crabs />}
     </div>
   )
 }

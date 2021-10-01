@@ -4,14 +4,21 @@ import MenuButtons from './MenuButtons'
 import Dish from './Dish'
 import makeAnOrder from './makeAnOrder'
 
-export default function Eatery() {
+export default function Restaurant() {
+  // блюдо в тарелке
   const [dish, setDish] = useState('')
+  // готовим или нет
   const [isCooking, setIsCooking] = useState(false)
 
+  // реагируем на выбор блюда
   const onDishSelect = async (menuItem) => {
+    // начинаем готовку
     setIsCooking(true)
+    // ждём блюдо
     const dish = await makeAnOrder(menuItem)
+    // заканчиваем готовку
     setIsCooking(false)
+    // сервируем блюдо
     setDish(dish)
   }
 
