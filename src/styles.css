@@ -6,25 +6,20 @@
 	padding: 2rem;
 }
 
-.root > div {
+.root > div,
+.root > div > div {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-}
-
-.eatery {
 	text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.eatery h2 {
+.root > div > div > h2 {
 	color: rgb(161, 0, 135);
 }
 
-.eatery h3 {
+.root > div > div > h3 {
 	color: rgb(0, 3, 51);
 }
 
