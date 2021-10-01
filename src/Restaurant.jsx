@@ -12,6 +12,9 @@ export default function Restaurant() {
 
   // реагируем на выбор блюда
   const onDishSelect = async (menuItem) => {
+    if (isCooking) {
+      return
+    }
     // начинаем готовку
     setIsCooking(true)
     // ждём блюдо
