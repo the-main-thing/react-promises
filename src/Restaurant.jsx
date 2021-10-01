@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 import MenuButtons from './MenuButtons'
 import Dish from './Dish'
@@ -11,6 +11,12 @@ export default function Restaurant() {
   const [isCooking, setIsCooking] = useState(false)
 
   const promiseRef = useRef()
+
+  useEffect(() => {
+    return () => {
+      promiseRef.current = null
+    }
+  }, [])
 
   // реагируем на выбор блюда
   const onDishSelect = async (menuItem) => {
