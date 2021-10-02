@@ -7,23 +7,21 @@ import makeAnOrder from './makeAnOrder'
 function Kitchen({ order }) {
   const [dish, setDish] = useState('')
   const [isCooking, setIsCooking] = useState(false)
-
   useEffect(() => {
     if (order) {
-      let stillAwaiting = true
       setIsCooking(true)
-
+      let stillAwaiting = true
       async function cook() {
         const dish = await makeAnOrder(order)
+        console.log(order, 'готовы.')
         if (stillAwaiting) {
-          setDish(dish)
+          console.log('Сервируем', order)
           setIsCooking(false)
+          setDish(dish)
         }
       }
-
       cook()
-
-      return () => {
+      return function cleanUp() {
         stillAwaiting = false
       }
     }
