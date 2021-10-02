@@ -33,7 +33,7 @@ export default function Restaurant() {
     if (promise !== promiseRef.current) {
       return
     }
-    console.log('Сервируем')
+    console.log('Сервируем', menuItem)
     // заканчиваем готовку
     setIsCooking(false)
     // сервируем блюдо
