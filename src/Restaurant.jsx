@@ -22,12 +22,13 @@ export default function Restaurant() {
 
     // ждём блюдо
     const dish = await promise
+    console.log(menuItem, 'готовы')
 
     // если за время готовки поменялся промис
     if (promise !== promiseRef.current) {
       return
     }
-
+    console.log('Сервируем', menuItem)
     // заканчиваем готовку
     setIsCooking(false)
     // сервируем блюдо
