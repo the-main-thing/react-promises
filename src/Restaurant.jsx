@@ -18,6 +18,7 @@ export default function Restaurant() {
     // начинаем готовку
     setIsCooking(true)
     // ждём блюдо
+    console.log('Начинаем готовить', menuItem)
     const dish = await makeAnOrder(menuItem)
     console.log(menuItem, 'готовы. Сервируем')
     // заканчиваем готовку
