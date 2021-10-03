@@ -21,6 +21,7 @@ export default function Restaurant() {
     promiseRef.current = promise
 
     // ждём блюдо
+    console.log('Начинаем готовить', menuItem)
     const dish = await promise
     console.log(menuItem, 'готовы')
 
