@@ -22,7 +22,7 @@ export function init() {
   return () => document.removeEventListener('keyup', onKeyup)
 }
 
-export default function makeAnOrder(menuItem) {
+export default function cookAnOrder(menuItem) {
   switch (menuItem) {
     case FIRST_MENU_ITEM:
       return new Promise((resolve) => {

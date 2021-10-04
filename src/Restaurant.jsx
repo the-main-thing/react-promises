@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import MenuButtons from './MenuButtons'
 import Dish from './Dish'
-import makeAnOrder from './makeAnOrder'
+import cookAnOrder from './cookAnOrder'
 
 export default function Restaurant() {
   // блюдо в тарелке
-  const [dish, setDish] = useState('')
+  const [dish, setDish] = React.useState('')
   // готовим или нет
-  const [isCooking, setIsCooking] = useState(false)
+  const [isCooking, setIsCooking] = React.useState(false)
 
   // реагируем на выбор блюда
   async function onDishSelect(menuItem) {
     // начинаем готовку
     setIsCooking(true)
     // ждём блюдо
-    const dish = await makeAnOrder(menuItem)
+    const dish = await cookAnOrder(menuItem)
     // заканчиваем готовку
     setIsCooking(false)
     // сервируем блюдо
