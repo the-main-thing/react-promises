@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import MenuButtons from './MenuButtons'
 import Dish from './Dish'
-import makeAnOrder from './makeAnOrder'
+import cookAnOrder from './cookAnOrder'
 
 export default function Restaurant() {
   // блюдо в тарелке
@@ -19,7 +19,7 @@ export default function Restaurant() {
     setIsCooking(true)
     // ждём блюдо
     console.log('Начинаем готовить', menuItem)
-    const dish = await makeAnOrder(menuItem)
+    const dish = await cookAnOrder(menuItem)
     console.log(menuItem, 'готовы. Сервируем')
     // заканчиваем готовку
     setIsCooking(false)
