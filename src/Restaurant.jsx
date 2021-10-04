@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import MenuButtons from './MenuButtons'
 import Dish from './Dish'
@@ -6,9 +6,9 @@ import cookAnOrder from './cookAnOrder'
 
 export default function Restaurant() {
   // блюдо в тарелке
-  const [dish, setDish] = React.useState('')
+  const [dish, setDish] = useState('')
   // готовим или нет
-  const [isCooking, setIsCooking] = React.useState(false)
+  const [isCooking, setIsCooking] = useState(false)
 
   // реагируем на выбор блюда
   async function onDishSelect(menuItem) {
