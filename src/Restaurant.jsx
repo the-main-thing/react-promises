@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 
 import MenuButtons from './MenuButtons'
 import Dish from './Dish'
-import makeAnOrder from './makeAnOrder'
+import cookAnOrder from './cookAnOrder'
 
 export default function Restaurant() {
   // блюдо в тарелке
@@ -23,7 +23,7 @@ export default function Restaurant() {
     // начинаем готовку
     setIsCooking(true)
 
-    const promise = makeAnOrder(menuItem)
+    const promise = cookAnOrder(menuItem)
     promiseRef.current = promise
 
     // ждём блюдо

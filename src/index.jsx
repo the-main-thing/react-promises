@@ -2,7 +2,7 @@ import { StrictMode, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
 import App from './App'
-import { init } from './makeAnOrder'
+import { init } from './cookAnOrder'
 import './styles.css'
 
 const RootNode = () => {
