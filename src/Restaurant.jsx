@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import MenuButtons from './MenuButtons'
 import Dish from './Dish'
-import makeAnOrder from './makeAnOrder'
+import cookAnOrder from './cookAnOrder'
 
 function Kitchen({ order }) {
   const [dish, setDish] = useState('')
@@ -13,7 +13,7 @@ function Kitchen({ order }) {
       let stillAwaiting = true
       async function cook() {
         console.log('Начинаем готовить', order)
-        const dish = await makeAnOrder(order)
+        const dish = await cookAnOrder(order)
         console.log(order, 'готовы.')
         if (stillAwaiting) {
           console.log('Сервируем', order)
