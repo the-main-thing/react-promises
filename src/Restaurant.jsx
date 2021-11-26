@@ -10,23 +10,22 @@ export default function Restaurant() {
   // готовим или нет
   const [isCooking, setIsCooking] = useState(false)
 
-  const promiseRef = useRef()
+  const menuItemRef = useRef()
 
   // реагируем на выбор блюда
   const onDishSelect = async (menuItem) => {
     // начинаем готовку
     setIsCooking(true)
 
-    const promise = cookAnOrder(menuItem)
-    promiseRef.current = promise
+    menuItemRef.current = promise
 
     // ждём блюдо
     console.log('Начинаем готовить', menuItem)
-    const dish = await promise
+    const dish = await cookAnOrder(menuItem)
     console.log(menuItem, 'готовы')
 
     // если за время готовки поменялся промис
-    if (promise !== promiseRef.current) {
+    if (promise !== menuItemRef.current) {
       return
     }
     console.log('Сервируем', menuItem)
