@@ -17,15 +17,15 @@ export default function Restaurant() {
     // начинаем готовку
     setIsCooking(true)
 
-    menuItemRef.current = promise
+    menuItemRef.current = menuItem 
 
     // ждём блюдо
     console.log('Начинаем готовить', menuItem)
     const dish = await cookAnOrder(menuItem)
     console.log(menuItem, 'готовы')
 
-    // если за время готовки поменялся промис
-    if (promise !== menuItemRef.current) {
+    // если за время готовки поменялся заказ
+    if (menuItem !== menuItemRef.current) {
       return
     }
     console.log('Сервируем', menuItem)
