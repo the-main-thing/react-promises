@@ -12,8 +12,11 @@ function useKitchen(order) {
       let stillAwaiting = true
       setIsCooking(true)
       async function cook() {
+        console.log('Начинаем готовить', order)
         const dish = await cookAnOrder(order)
+        console.log(order, 'готовы')
         if (stillAwaiting) {
+          console.log('Сервируем', order)
           setIsCooking(false)
           setDish(dish)
         }
